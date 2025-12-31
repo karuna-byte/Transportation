@@ -4,7 +4,7 @@ from src.data_cleaning.CleanSeqID import SeqID
 from src.data_cleaning.CleanDateOfStop import DateOfStop
 from src.data_cleaning.CleanTimeOfStop import TimeOfStop
 from src.data_cleaning.CleanAgency import Agency
-from src.data_cleaning.ClanSubAgency import SubAgency
+from src.data_cleaning.CleanSubAgency import SubAgency
 from src.data_cleaning.CleanDescription import Description
 from src.data_cleaning.CleanLocation import Location
 from src.data_cleaning.CleanLatitude import Latitude
