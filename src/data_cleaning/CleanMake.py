@@ -1,14 +1,6 @@
 class Make:
     @staticmethod
     def clean_make(df):
-        df["Make"] = (
-            df["Make"]
-            .fillna("UNKNOWN")
-            .astype("string")
-            .str.upper()
-            .str.strip()
-            .str.replace(r"\s+", " ", regex=True)
-        )
 
         manufacturer_map = {
 
@@ -5088,5 +5080,14 @@ class Make:
         }
 
         df['Make'] = df['Make'].map(manufacturer_map)
+
+        df["Make"] = (
+            df["Make"]
+            .fillna("UNKNOWN")
+            .astype("string")
+            .str.upper()
+            .str.strip()
+            .str.replace(r"\s+", " ", regex=True)
+        )
 
         return df

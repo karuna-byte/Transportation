@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from datetime import datetime
 from src.data_cleaning.CleanSeqID import SeqID
 from src.data_cleaning.CleanDateOfStop import DateOfStop
 from src.data_cleaning.CleanTimeOfStop import TimeOfStop
@@ -141,14 +140,16 @@ df = DriverCity.clean_driver_city(df)
 # print("DataFrame shape after cleaning Driver City:", df.shape)
 
 df = DriverState.clean_driver_state(df)
-print("DataFrame shape after cleaning Driver State:", df.shape)
+# print("DataFrame shape after cleaning Driver State:", df.shape)
 
 df = DLState.clean_dl_state(df)
-print("DataFrame shape after cleaning DL State:", df.shape)
+# print("DataFrame shape after cleaning DL State:", df.shape)
 
 df = ArrestType.clean_arrest_type(df)
-print("DataFrame shape after cleaning Arrest Type:", df.shape)
+# print("DataFrame shape after cleaning Arrest Type:", df.shape)
 
-# df.to_csv("data/cleaned/Traffic_Violations_Cleaned.csv", index=False)
+df.to_csv(
+    "data/cleaned/Traffic_Violations_Cleaned.csv", index=False
+)  ## Save cleaned data
 
-print("processed -----------------------------")
+print("Processed Successfully -----")

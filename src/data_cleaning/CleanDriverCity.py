@@ -1,39 +1,29 @@
 class DriverCity:
     @staticmethod
     def clean_driver_city(df):
-        df["Driver City"] = (
-            df["Driver City"]
-            .fillna("UNKNOWN")
-            .astype(str)
-            .str.upper()
-            .str.strip()
-            .str.replace(r"\s+", " ", regex=True)
-        )
 
         driver_city_map = {
-            'GAITHERSBURG': 'GAITHERSBURG',
-            'GAITHERSBURGH': 'GAITHERSBURG',
-            'LAURELGAITHERSBURG': 'GAITHERSBURG',
-            'GAITHERSBURG, MD': 'GAITHERSBURG',
-            'GAITHERSBURG,MD': 'GAITHERSBURG',
-            'GAITHERSBURG MD': 'GAITHERSBURG',
-            'GAITHERSBURGQ': 'GAITHERSBURG',
-            'GAITHERSBURGMD': 'GAITHERSBURG',
-            'GAITHERSBURGG': 'GAITHERSBURG',
-            'GAITHERSBURG102': 'GAITHERSBURG',
-            'GGAITHERSBURG': 'GAITHERSBURG',
-            'GAITHERSBURGFREDERIC': 'GAITHERSBURG',
-            'GAITHERSBURGBETHESDA': 'GAITHERSBURG',
-            'GAITHERSBURGS': 'GAITHERSBURG',
-            'GAITHERSBURG': 'GAITHERSBURG',
-            'GAITHERSBURGM': 'GAITHERSBURG',
-            'GAITHERSBURG CT': 'GAITHERSBURG',
-
-
-            'AALEXANDRIA': 'ALEXANDRIA',
-            'A;LEXANDRIA': 'ALEXANDRIA',
-            'ABBINGDON': 'ABBOTTSTOWN',
-            'ABBOTTSTOWN': 'ABBOTTSTOWN',
+            "GAITHERSBURG": "GAITHERSBURG",
+            "GAITHERSBURGH": "GAITHERSBURG",
+            "LAURELGAITHERSBURG": "GAITHERSBURG",
+            "GAITHERSBURG, MD": "GAITHERSBURG",
+            "GAITHERSBURG,MD": "GAITHERSBURG",
+            "GAITHERSBURG MD": "GAITHERSBURG",
+            "GAITHERSBURGQ": "GAITHERSBURG",
+            "GAITHERSBURGMD": "GAITHERSBURG",
+            "GAITHERSBURGG": "GAITHERSBURG",
+            "GAITHERSBURG102": "GAITHERSBURG",
+            "GGAITHERSBURG": "GAITHERSBURG",
+            "GAITHERSBURGFREDERIC": "GAITHERSBURG",
+            "GAITHERSBURGBETHESDA": "GAITHERSBURG",
+            "GAITHERSBURGS": "GAITHERSBURG",
+            "GAITHERSBURG": "GAITHERSBURG",
+            "GAITHERSBURGM": "GAITHERSBURG",
+            "GAITHERSBURG CT": "GAITHERSBURG",
+            "AALEXANDRIA": "ALEXANDRIA",
+            "A;LEXANDRIA": "ALEXANDRIA",
+            "ABBINGDON": "ABBOTTSTOWN",
+            "ABBOTTSTOWN": "ABBOTTSTOWN",
             "ABELL": "ABINGODON",
             "ABERDEEN": "ABINGODON",
             "ABILENE": "ABINGODON",
@@ -157,55 +147,55 @@ class DriverCity:
             "ALISO VIEJO": "ALISO VIEGJO",
             "ALLEN": "ALLENDALE",
             "ALLENDALE": "ALLENDALE",
-        "ALLENHURST":"ALLENTOWN",
-            "ALLENTOWN":"ALLENTOWN",
-            "ALLERTON":"ALLENTOWN",
-            "ALLISON PARK":"ALLENTOWN",
-            "ALLSTON":"ALLENTOWN",
-            "ALMA":"ALLENTOWN",
-            "ALMOND":"ALLENTOWN",
-            "ALOHA":"ALLENTOWN",
-            "ALPENA":"ALPHARETTA",
-            "ALPHARETTA":"ALPHARETTA",
-            "ALPHEDI":"ALPHARETTA",
-            "ALPHRETTA":"ALPHARETTA",
-            "ALPINE":"ALTAMOMTE SPRINGS",
-            "ALRINGTON":"ALTAMOMTE SPRINGS",
-            "ALSTEAD":"ALTAMOMTE SPRINGS",
-            "ALTA LOMA":"ALTAMOMTE SPRINGS",
-            "ALTA VISTA":"ALTAMOMTE SPRINGS",
-            "ALTADENA":"ALTAMOMTE SPRINGS",
-            "ALTAMOMTE SPRINGS":"ALTAMOMTE SPRINGS",
-            "ALTAMONTE SPGS":"ALTAMOMTE SPRINGS",
-            "ALTAMONTE SPRGS":"ALTAMOMTE SPRINGS",
-            "ALTAMONTE SPRINGS":"ALTAMOMTE SPRINGS",
-            "ALTAMOTE SPRINGS":"ALTAMOMTE SPRINGS",
-            "ALTANTA":"ALTAMOMTE SPRINGS",
-            "ALTAVISTA":"ALTAMOMTE SPRINGS",
-            "ALTLANTA":"ALTAMOMTE SPRINGS",
-            "ALTON":"ALTAMOMTE SPRINGS",
-            "ALTONA":"ALTAMOMTE SPRINGS",
-            "ALTOONA":"ALTAMOMTE SPRINGS",
-            "ALTUS":"ALTAMOMTE SPRINGS",
-            "ALUM BANK":"ALWXANDRIA",
-            "ALUM CREEK":"ALWXANDRIA",
-            "ALVARADO":"ALWXANDRIA",
-            "ALVIN":"ALWXANDRIA",
-            "ALWXANDRIA":"ALWXANDRIA",
-            "AMARILLO":"AMARILLO",
-            "AMBERFIELD":"AMARILLO",
-            "AMBLER":"AMARILLO",
-            "AMBRIDGE":"AMARILLO",
-            "AMELIA":"AMARILLO",
-            "AMELIA COURT HOUSE":"AMARILLO",
-            "AMENIA":"AMARILLO",
-            "AMERICAN CYN":"AMERICAN CANYON",
-            "AMERICAN FORK":"AMERICAN FORK",
-            "AMERICUS":"AMERICUS",
-            "AMES":"AMERICUS",
-            "AMESBURY":"AMERICUS",
-            "AMHERST":"AMHERST",
-            "AMHHERST":"AMHERST",
+            "ALLENHURST": "ALLENTOWN",
+            "ALLENTOWN": "ALLENTOWN",
+            "ALLERTON": "ALLENTOWN",
+            "ALLISON PARK": "ALLENTOWN",
+            "ALLSTON": "ALLENTOWN",
+            "ALMA": "ALLENTOWN",
+            "ALMOND": "ALLENTOWN",
+            "ALOHA": "ALLENTOWN",
+            "ALPENA": "ALPHARETTA",
+            "ALPHARETTA": "ALPHARETTA",
+            "ALPHEDI": "ALPHARETTA",
+            "ALPHRETTA": "ALPHARETTA",
+            "ALPINE": "ALTAMOMTE SPRINGS",
+            "ALRINGTON": "ALTAMOMTE SPRINGS",
+            "ALSTEAD": "ALTAMOMTE SPRINGS",
+            "ALTA LOMA": "ALTAMOMTE SPRINGS",
+            "ALTA VISTA": "ALTAMOMTE SPRINGS",
+            "ALTADENA": "ALTAMOMTE SPRINGS",
+            "ALTAMOMTE SPRINGS": "ALTAMOMTE SPRINGS",
+            "ALTAMONTE SPGS": "ALTAMOMTE SPRINGS",
+            "ALTAMONTE SPRGS": "ALTAMOMTE SPRINGS",
+            "ALTAMONTE SPRINGS": "ALTAMOMTE SPRINGS",
+            "ALTAMOTE SPRINGS": "ALTAMOMTE SPRINGS",
+            "ALTANTA": "ALTAMOMTE SPRINGS",
+            "ALTAVISTA": "ALTAMOMTE SPRINGS",
+            "ALTLANTA": "ALTAMOMTE SPRINGS",
+            "ALTON": "ALTAMOMTE SPRINGS",
+            "ALTONA": "ALTAMOMTE SPRINGS",
+            "ALTOONA": "ALTAMOMTE SPRINGS",
+            "ALTUS": "ALTAMOMTE SPRINGS",
+            "ALUM BANK": "ALWXANDRIA",
+            "ALUM CREEK": "ALWXANDRIA",
+            "ALVARADO": "ALWXANDRIA",
+            "ALVIN": "ALWXANDRIA",
+            "ALWXANDRIA": "ALWXANDRIA",
+            "AMARILLO": "AMARILLO",
+            "AMBERFIELD": "AMARILLO",
+            "AMBLER": "AMARILLO",
+            "AMBRIDGE": "AMARILLO",
+            "AMELIA": "AMARILLO",
+            "AMELIA COURT HOUSE": "AMARILLO",
+            "AMENIA": "AMARILLO",
+            "AMERICAN CYN": "AMERICAN CANYON",
+            "AMERICAN FORK": "AMERICAN FORK",
+            "AMERICUS": "AMERICUS",
+            "AMES": "AMERICUS",
+            "AMESBURY": "AMERICUS",
+            "AMHERST": "AMHERST",
+            "AMHHERST": "AMHERST",
             "AMISSVILLE": "AMISSVILLE",
             "AMITYVILLE": "AMITYVILLE",
             "AMPLE": "AMPLE",
@@ -469,10 +459,8 @@ class DriverCity:
             "BAYVILLE": "BAYVILLE",
             # Berea
             "BEREA": "BEREA",
-
             # Bergenfield
             "BERGENFIELD": "BERGENFIELD",
-
             # Berkeley variants
             "BERKELEY": "BERKELEY",
             "BERKELEY HGHTS": "BERKELEY HEIGHTS",
@@ -489,28 +477,20 @@ class DriverCity:
             "BERKLEY SPGS": "BERKELEY SPRINGS",
             "BERKLEY SPRING": "BERKELEY SPRINGS",
             "BERKLEY SPRINGS": "BERKELEY SPRINGS",
-
             # Berlin
             "BERLIN": "BERLIN",
-
             # Bermantown
             "BERMANTOWN": "BERMANTOWN",
-
             # Bernardsville
             "BERNARDSVILLE": "BERNARDSVILLE",
-
             # Bernville
             "BERNVILLE": "BERNVILLE",
-
             # Berrien Springs
             "BERRIEN SPRINGS": "BERRIEN SPRINGS",
-
             # Berryville
             "BERRYVILLE": "BERRYVILLE",
-
             # Beirut
             "BERUIT, LEB": "BEIRUT",
-
             # Berwyn variants
             "BERWICK": "BERWICK",
             "BERWIN HEIGHTS": "BERWYN HEIGHTS",
@@ -523,11 +503,9 @@ class DriverCity:
             "BERWYN HIEGHTS": "BERWYN HEIGHTS",
             "BERWYN HIGHTS": "BERWYN HEIGHTS",
             "BERYWN HEIGHTS": "BERWYN HEIGHTS",
-
             # Bessemer
             "BESSEMER": "BESSEMER",
             "BESSEMER CITY": "BESSEMER CITY",
-
             # Bethesda variants
             "BESTHEDA": "BETHESDA",
             "BESTHESDA": "BETHESDA",
@@ -555,32 +533,24 @@ class DriverCity:
             "BETTHESDA": "BETHESDA",
             "BEYHESDA": "BETHESDA",
             "BEWTHESDA": "BETHESDA",
-
             # Bethany
             "BETHANY": "BETHANY",
             "BETHANY BEACH": "BETHANY BEACH",
-
             # Bethel
             "BETHEL": "BETHEL",
             "BETHEL PARK": "BETHEL PARK",
-
             # Bethlehem
             "BETHLEHAM": "BETHLEHEM",
             "BETHLEHEM": "BETHLEHEM",
-
             # Bethpage
             "BETHPAGE": "BETHPAGE",
-
             # Bethune
             "BETHUNE": "BETHUNE",
-
             # Beverly
             "BEVERLY": "BEVERLY",
             "BEVERLY HILLS": "BEVERLY HILLS",
-
             # Bexley
             "BEXLEY": "BEXLEY",
-
             # Big places
             "BIG COVE TANN": "BIG COVE TANN",
             "BIG LAKE": "BIG LAKE",
@@ -593,7 +563,6 @@ class DriverCity:
             "BIG SUR": "BIG SUR",
             "BIGFORK": "BIGFORK",
             "BIGLERVILLE": "BIGLERVILLE",
-
             # Bloom / Blue
             "BLOOMFIELD": "BLOOMFIELD",
             "BLOOMFIELD HILLS": "BLOOMFIELD HILLS",
@@ -606,29 +575,23 @@ class DriverCity:
             "BLUEMONT": "BLUEMONT",
             "BLUE ISLAND": "BLUE ISLAND",
             "BLUE RIDGE": "BLUE RIDGE",
-            
             # Bowie variants
             "BOWIE": "BOWIE",
             "BOWIEL": "BOWIE",
             "BOWIR": "BOWIE",
-
             # Boynton Beach
             "BOYNTON BEACH": "BOYNTON BEACH",
             "BOYNTON BCH": "BOYNTON BEACH",
             "BOYNTON BECH": "BOYNTON BEACH",
             "BOYTON BEACH": "BOYNTON BEACH",
-
             # Boston
             "BOSTON": "BOSTON",
-
             # Bountiful
             "BOUNTIFUL": "BOUNTIFUL",
-
             # Boulder
             "BOULDER": "BOULDER",
             "BOULDER CITY": "BOULDER CITY",
             "BOULDER CREEK": "BOULDER CREEK",
-
             # Brandenburg and variants
             "BRANDENBURG": "BRANDENBURG",
             "BRANDEYWINE": "BRANDYWINE",
@@ -662,7 +625,6 @@ class DriverCity:
             "BREWER": "BREWER",
             "BREWERTON": "BREWERTON",
             "BREWSTER": "BREWSTER",
-
             # Briar / Bridge variants
             "BRIARCLIFF": "BRIARCLIFF",
             "BRIARCLIFF MAN": "BRIARCLIFF MANOR",
@@ -676,7 +638,6 @@ class DriverCity:
             "BRIDGETON": "BRIDGETON",
             "BRIDGEVILLE": "BRIDGEVILLE",
             "BRIDGEWATER": "BRIDGEWATER",
-
             # Brighton / Briggs
             "BRIGHTON": "BRIGHTON",
             "BRIGHTWOOD": "BRIGHTWOOD",
@@ -685,7 +646,6 @@ class DriverCity:
             "BRISTOL HILL LANE": "BRISTOL HILL LANE",
             "BRISTOW": "BRISTOW",
             "BRISTOWTARVIE CIR": "BRISTOW",
-
             # Brooklyn / Brook variants
             "BROOK PARK": "BROOK PARK",
             "BROOKFIELD": "BROOKFIELD",
@@ -700,7 +660,6 @@ class DriverCity:
             "BROOKPARK": "BROOK PARK",
             "BROOKSVILLE": "BROOKSVILLE",
             "BROOKVILLE": "BROOKVILLE",
-
             # Brown / Bryant / Bryan
             "BROWN DEER": "BROWN DEER",
             "BROWNS MILLS": "BROWNS MILLS",
@@ -715,14 +674,12 @@ class DriverCity:
             "BRYANS RD": "BRYAN ROAD",
             "BRYANS ROAD": "BRYAN ROAD",
             "BRYANS ROAD CHURCH": "BRYAN ROAD",
-
             # Brunswick / Bruce
             "BRUNSWICK": "BRUNSWICK",
             "BRUNSKWICK": "BRUNSWICK",
             "BRUINSWICK": "BRUNSWICK",
             "BRUCE": "BRUCE",
             "BRUCETON MILLS": "BRUCETON MILLS",
-
             # Burton / Burtons / Burtnsville variants
             "BURTON": "BURTON",
             "BURTONSVILLE": "BURTONSVILLE",
@@ -742,7 +699,6 @@ class DriverCity:
             "BURTOSVILLE": "BURTONSVILLE",
             "BURTSONSVILLE": "BURTONSVILLE",
             "BURTSONVILLE": "BURTONSVILLE",
-
             # Bush / But… / Bu… variants
             "BUSHKILL": "BUSHKILL",
             "BUSHNELL": "BUSHNELL",
@@ -769,34 +725,28 @@ class DriverCity:
             "BUERTONSVILLE": "BURTONSVILLE",
             # C Islip
             "C ISLIP": "CENTRAL ISLIP",
-
             # Clarksburg variants
             "C LARKSBURG": "CLARKSBURG",
             "CALRKSBURG": "CLARKSBURG",
             "CARKSBURG": "CLARKSBURG",
-
             # Cascade / Caascade
             "CAASCADE": "CASCADE",
             "CASCADE": "CASCADE",
-
             # Cabin / Cabins
             "CABIN BRANCH": "CABIN BRANCH",
             "CABIN JOHN": "CABIN JOHN",
             "CABINS": "CABINS",
             "CABOT": "CABOT",
-
             # Caddo / Cade / Cadillac / Cadiz
             "CADDO MILLS": "CADDO MILLS",
             "CADE": "CADE",
             "CADILLAC": "CADILLAC",
             "CADIZ": "CADIZ",
             "CAEN": "CAEN",
-
             # Caguas / Cairo / Gaithersburg
             "CAGUAS": "CAGUAS",
             "CAIRO": "CAIRO",
             "CAITHERSBURG": "GAITHERSBURG",
-
             # California / cities in CA
             "CALABASAS": "CALABASAS",
             "CALABASH": "CALABASH",
@@ -809,14 +759,12 @@ class DriverCity:
             "CALIFON": "CALIFON",
             "CALIFORNIA": "CALIFORNIA",
             "CALISTOGA": "CALISTOGA",
-
             # Callao / Callaway / Calvert
             "CALLAO": "CALLAO",
             "CALLAWAY": "CALLAWAY",
             "CALLICOON": "CALLICOON",
             "CALUMET CITY": "CALUMET CITY",
             "CALVERTON": "CALVERTON",
-
             # Cam / Campbell / Camden / Cameron
             "CAM SPRINGS": "CAMP SPRINGS",
             "CAMARILLO": "CAMARILLO",
@@ -843,13 +791,11 @@ class DriverCity:
             "CAMPHILL": "CAMP HILL",
             "CAMPLIN": "CAMPLIN",
             "CAMPOBELLO": "CAMPOBELLO",
-
             # Canal Winchester variants
             "CANAL WINCHESTE": "CANAL WINCHESTER",
             "CANAL WINCHESTER": "CANAL WINCHESTER",
             "CANAL WINCHST": "CANAL WINCHESTER",
             "CANAL WNCHSTR": "CANAL WINCHESTER",
-
             # Canandaigua / Candiac / Candler / Canfield
             "CANANDAIGUA": "CANANDAIGUA",
             "CANDIAC": "CANDIAC",
@@ -862,13 +808,11 @@ class DriverCity:
             "CANTON": "CANTON",
             "CANTONMENT": "CANTONMENT",
             "CANTONSVILLE": "CANTONSVILLE",
-
             # Canyon variants
             "CANYON": "CANYON",
             "CANYON COUNTR": "CANYON COUNTRY",
             "CANYON COUNTRY": "CANYON COUNTRY",
             "CANYON LAKE": "CANYON LAKE",
-
             # Cape variants
             "CAP HEIGHTS": "CAPITOL HEIGHTS",
             "CAPE CANAVERAL": "CAPE CANAVERAL",
@@ -879,7 +823,6 @@ class DriverCity:
             "CAPE MAY": "CAPE MAY",
             "CAPE MAY CT HS": "CAPE MAY COURT HOUSE",
             "CAPE TOWN": "CAPE TOWN",
-
             # Capitol / Capital Heights variants
             "CAPIITOL HEIGHTS": "CAPITOL HEIGHTS",
             "CAPITAL HEIGHTS": "CAPITOL HEIGHTS",
@@ -908,7 +851,6 @@ class DriverCity:
             "CAPTIOL HEIGHTS": "CAPITOL HEIGHTS",
             "CAPTIVA": "CAPTIVA",
             "CAPTOL HEIGHTS": "CAPITOL HEIGHTS",
-
             # Car / Carlisle / Carmel
             "CARBONDALE": "CARBONDALE",
             "CARDALE": "CARBONDALE",
@@ -926,7 +868,6 @@ class DriverCity:
             "CARMEL": "CARMEL",
             "CARMICHAEL": "CARMICHAEL",
             "CARMICHAELS": "CARMICHAEL",
-
             # Carnegie / Carnesville / Caro
             "CARNAGIE": "CARNEGIE",
             "CARNEGIE": "CARNEGIE",
@@ -938,7 +879,6 @@ class DriverCity:
             "CAROLINA": "CAROLINA",
             "CAROLINA BEACH": "CAROLINA BEACH",
             "CAROLINA SHORES": "CAROLINA SHORES",
-
             # Carpentersville / Carrboro / Carroll
             "CARPENTERSVILLE": "CARPENTERSVILLE",
             "CARRABELLE": "CARRABELLE",
@@ -947,7 +887,6 @@ class DriverCity:
             "CARRILLTON": "CARRILLTON",
             "CARROLL": "CARROLL",
             "CARROLLTON": "CARROLLTON",
-
             # Carson / Carteret / Cartersville
             "CARSON": "CARSON",
             "CARTERET": "CARTERET",
@@ -957,14 +896,12 @@ class DriverCity:
             "CARVEL BEACH": "CARVEL BEACH",
             "CARVER": "CARVER",
             "CARY": "CARY",
-
             # Casa / Cascade / Casco / Casper
             "CASA GRANDE": "CASA GRANDE",
             "CASANOVA": "CASANOVA",
             "CASCO": "CASCO",
             "CASHTOWN": "CASHTOWN",
             "CASPER": "CASPER",
-
             # Cass / Castle / Castro
             "CASS LAKE": "CASS LAKE",
             "CASSELBERRY": "CASSELBERRY",
@@ -975,7 +912,6 @@ class DriverCity:
             "CASTLE ROCK": "CASTLE ROCK",
             "CASTLETON": "CASTLETON",
             "CASTRO VALLEY": "CASTRO VALLEY",
-
             # Cat / Catasauqua / Catawba
             "CASWELL BEACH": "CASWELL BEACH",
             "CATASAUQUA": "CATASAUQUA",
@@ -996,7 +932,6 @@ class DriverCity:
             "CATOSVILLE": "CATONSVILLE",
             "CATSKILL": "CATSKILL",
             "CATSONVILLE": "CATONSVILLE",
-
             # Cavalier / Cave / Cay
             "CAVALIER": "CAVALIER",
             "CAVE CREEK": "CAVE CREEK",
@@ -1006,11 +941,9 @@ class DriverCity:
             "CAYTONSVILLE": "CATONSVILLE",
             "CAYUGA": "CAYUGA",
             "CAZENOVIA": "CAZENOVIA",
-
             # CC / College Park
             "CC": "CC",
             "CCOLLEGE PARK": "COLLEGE PARK",
-
             # Cedar / Ce… / Celebration
             "CEDAR": "CEDAR",
             "CEDAR BLUFF": "CEDAR BLUFF",
@@ -1027,7 +960,6 @@ class DriverCity:
             "CEHVY CHASE": "CHEVY CHASE",
             "CELEBRATION": "CELEBRATION",
             "CELINA": "CELINA",
-
             # Cherry / Cheverly / Chevy variants
             "CHERRY HILL": "CHERRY HILL",
             "CHERRY POINT": "CHERRY POINT",
@@ -1062,7 +994,6 @@ class DriverCity:
             "CHEVY VHASE": "CHEVY CHASE",
             "CHEVYCHASE": "CHEVY CHASE",
             "CHEY CHASE": "CHEVY CHASE",
-
             # Chesapeake variants
             "CHESAPEAK": "CHESAPEAKE",
             "CHESAPEAK BCH": "CHESAPEAKE BEACH",
@@ -1072,7 +1003,6 @@ class DriverCity:
             "CHESAPEAKE CITY": "CHESAPEAKE",
             "CHESEPEAKE": "CHESAPEAKE",
             "CHESSAPEAK": "CHESAPEAKE",
-
             # Chester variants
             "CHESTER": "CHESTER",
             "CHESTER GAP": "CHESTER",
@@ -1083,39 +1013,32 @@ class DriverCity:
             "CHESTERFIELD": "CHESTERFIELD",
             "CHESTERLAND": "CHESTERLAND",
             "CHESTERTOWN": "CHESTERTOWN",
-
             # Chestnut variants
             "CHESTNT HL NWTN": "CHESTNUT HILL",
             "CHESTNUT HILL": "CHESTNUT HILL",
             "CHESTNUT HILL COVE": "CHESTNUT HILL",
             "CHESTNUT RIDGE": "CHESTNUT RIDGE",
-
             "CHESLEY RD": "CHESLEY RD",
             "CHESLSEY": "CHESLEY RD",
             "CHESNEE": "CHESNEE",
             "CHESWICK": "CHESWICK",
-
             # Cheyenne
             "CHEYENNE": "CHEYENNE",
             "CHEYNEY": "CHEYNEY",
-
             # Chicago variants
             "CHICACO": "CHICAGO",
             "CHICAGE": "CHICAGO",
             "CHICAGO": "CHICAGO",
             "CHICAGO HEIGHTS": "CHICAGO HEIGHTS",
             "CHIGAGO": "CHICAGO",
-
             # Chino variants
             "CHINO": "CHINO",
             "CHINO HILLS": "CHINO HILLS",
             "CHINO VALLEY": "CHINO VALLEY",
-
             # Chincoteague
             "CHICOTEAGUE": "CHINCOTEAGUE",
             "CHINCOTEAGUE": "CHINCOTEAGUE",
             "CHINCOTEAGUE ISLAND": "CHINCOTEAGUE",
-
             # Clarksburg variants
             "CLAARKSBURG": "CLARKSBURG",
             "CLAEKSBURG": "CLARKSBURG",
@@ -1137,7 +1060,6 @@ class DriverCity:
             "CLARSBURG": "CLARKSBURG",
             "CLARSKBURG": "CLARKSBURG",
             "CLARSKVILLE": "CLARKSBURG",
-
             # College Park variants
             "CLLEGE PARK": "COLLEGE PARK",
             "COILLEGE PARK": "COLLEGE PARK",
@@ -1153,7 +1075,6 @@ class DriverCity:
             "COLLEGE PATK": "COLLEGE PARK",
             "COLLEGE PK": "COLLEGE PARK",
             "COLLEGE PKWY": "COLLEGE PARK",
-
             # Columbia / Columbus variants
             "COLMBIA": "COLUMBIA",
             "COLMBNE VLY": "COLUMBIA",
@@ -1171,13 +1092,11 @@ class DriverCity:
             "COLUMBIANA": "COLUMBIANA",
             "COLUMBUA": "COLUMBIA",
             "COLUMBUS": "COLUMBUS",
-
             # Colorado variants
             "COLORADO SPRI": "COLORADO SPRINGS",
             "COLORADO SPRINGS": "COLORADO SPRINGS",
             "COLORODO SPRINGS": "COLORADO SPRINGS",
             "COLO SPRGS": "COLORADO SPRINGS",
-
             # Misc / unknown typos
             "CHKTG": "UNKNOWN",
             "CIR": "UNKNOWN",
@@ -1187,7 +1106,6 @@ class DriverCity:
             "CMP PENDLETON": "PENDLETON",
             "CULIMBIA": "COLUMBIA",
             "COUMBIA": "COLUMBIA",
-
             # D.C / District Heights variants
             "D.C": "WASHINGTON D.C.",
             "D.C.": "WASHINGTON D.C.",
@@ -1212,7 +1130,6 @@ class DriverCity:
             "DISTRCIT HEIGHTS": "DISTRICT HEIGHTS",
             "DISTRCT HEIGHTS": "DISTRICT HEIGHTS",
             "DISTRIC HEIGHTS": "DISTRICT HEIGHTS",
-
             # Damascus variants
             "DAAMSCUS": "DAMASCUS",
             "DAASCUS": "DAMASCUS",
@@ -1234,7 +1151,6 @@ class DriverCity:
             "DANASCUS": "DAMASCUS",
             "DMASCUS": "DAMASCUS",
             "DEMASCUS": "DAMASCUS",
-
             # Dalton / Dallas / Daly / Dade City
             "DALTON": "DALTON",
             "DALLAS": "DALLAS",
@@ -1242,7 +1158,6 @@ class DriverCity:
             "DALMATIA": "DALMATIA",
             "DALY CITY": "DALY CITY",
             "DADE CITY": "DADE CITY",
-
             # Danbury / Danville / Daphne / Darien variants
             "DANBURY": "DANBURY",
             "DANDRIDGE": "DANDRIDGE",
@@ -1254,24 +1169,20 @@ class DriverCity:
             "DANRESTOWN": "DARNESTOWN",
             "DANVERS": "DANVERS",
             "DANVILLE": "DANVILLE",
-
             # Dartmouth / Dauphin
             "DARTMOUTH": "DARTMOUTH",
             "DAUPHIN": "DAUPHIN",
-
             # Davidson variants
             "DAVIDSON": "DAVIDSON",
             "DAVIDSONVILL": "DAVIDSONVILLE",
             "DAVIDSONVILLE": "DAVIDSONVILLE",
             "DAVIDSVILLE": "DAVIDSONVILLE",
-
             # Dayton / Daytona
             "DAYTIN": "DAYTON",
             "DAYTON": "DAYTON",
             "DAYTON ST": "DAYTON",
             "DAYTONA BEACH": "DAYTONA BEACH",
             "DAYTONA BEACH SHORES": "DAYTONA BEACH",
-
             # Delaware / Delmar / Delano variants
             "DELAWARE": "DELAWARE",
             "DELCO": "DELAWARE",
@@ -1285,7 +1196,6 @@ class DriverCity:
             "DELTONA": "DELTONA",
             "DEMAREST": "DEMAREST",
             "DEMASCUS": "DAMASCUS",
-
             # Denver / Denton / Decatur
             "DENVER": "DENVER",
             "DENVILLE": "DENVILLE",
@@ -1293,38 +1203,31 @@ class DriverCity:
             "DENTONE": "DENTON",
             "DECATUR": "DECATUR",
             "DECORAH": "DECORAH",
-
             # Detroit / Des Moines / Des Plaines
             "DETROIT": "DETROIT",
             "DES MOINES": "DES MOINES",
             "DES PLAINES": "DES PLAINES",
             "DESOTO": "DESOTO",
-            
             # Dexter / Diamond
             "DEXTER": "DEXTER",
             "DEXTER CITY": "DEXTER",
             "DIAMOND BAR": "DIAMOND BAR",
-
             # Dillsburg / Dillon / Dilling
             "DILLSBURG": "DILLSBURG",
             "DILLON": "DILLON",
             "DILLINER": "DILLON",
             "DILLONVALE": "DILLON",
-
             # Dimmitt / Dimock / Dingmans Ferry
             "DIMMITT": "DIMMITT",
             "DIMOCK": "DIMOCK",
             "DINGMANS FERRY": "DINGMANS FERRY",
             "DINGMANS FRY": "DINGMANS FERRY",
-
             # Discovery / Disputanta
             "DISCOVERY BAY": "DISCOVERY BAY",
             "DISPUTANTA": "DISPUTANTA",
-
             # Dobbs Ferry / Dobson
             "DOBBS FERRY": "DOBBS FERRY",
             "DOBSON": "DOBSON",
-
             # Dodge / Douglas / Dover
             "DODGE CITY": "DODGE CITY",
             "DOGLASVILLE": "DOUGLASVILLE",
@@ -1332,37 +1235,31 @@ class DriverCity:
             "DOUGLASSVILLE": "DOUGLASSVILLE",
             "DOVER": "DOVER",
             "DOVER HEIGHTS": "DOVER",
-
             # Dumfries / Dulles / Duluth / DuPont
             "DUMFRIES": "DUMFRIES",
             "DUMMIRES": "DUMFRIES",
             "DULLES": "DULLES",
             "DULUTH": "DULUTH",
             "DUPONT": "DUPONT",
-
             # Dunbar / Duncan / Dundalk
             "DUNBAR": "DUNBAR",
             "DUNCAN": "DUNCAN",
             "DUNDALK": "DUNDALK",
             "DUNDLAK": "DUNDALK",
             "DUNKALK": "DUNDALK",
-
             # Durham / Durango
             "DURHAM": "DURHAM",
             "DURHAMNC": "DURHAM",
             "DURANGO": "DURANGO",
-
             # Dyer / Duxbury
             "DYER": "DYER",
             "DUXBURY": "DUXBURY",
-
             # Unknown / miscellaneous
             "DAAMSCUS": "DAMASCUS",
             "DAASCUS": "DAMASCUS",
             "DIISTRICT HEIGHTS": "DISTRICT HEIGHTS",
             "DIDTRICT HEIGHTS": "DISTRICT HEIGHTS",
             "DISTRICT": "DISTRICT HEIGHTS",
-            
             # E. / E prefix variants
             "E AMHERST": "EAST AMHERST",
             "EAST AMHERST": "EAST AMHERST",
@@ -1399,7 +1296,6 @@ class DriverCity:
             "EAST CLEVEAND": "EAST CLEVELAND",
             "EAST CLEVELAND": "EAST CLEVELAND",
             "EASTAMPTON": "EAST AMPTON",
-
             # Eagle variants
             "EAGAN": "EAGAN",
             "EAGLE": "EAGLE",
@@ -1409,12 +1305,10 @@ class DriverCity:
             "EAGLE RIVER": "EAGLE RIVER",
             "EAGLE ROCK": "EAGLE ROCK",
             "EAGLEVILLE": "EAGLEVILLE",
-
             # Early / Earleville / Earlysville
             "EARLEVILLE": "EARLEVILLE",
             "EARLVILLE": "EARLEVILLE",
             "EARLYSVILLE": "EARLYSVILLE",
-
             # East Aurora / East Berlin / East Hampton / East Hartford / East Islip / East Lansing / East Meadow
             "EAST AURORA": "EAST AURORA",
             "EAST BERLIN": "EAST BERLIN",
@@ -1423,18 +1317,15 @@ class DriverCity:
             "EAST ISLIP": "EAST ISLIP",
             "EAST LANSING": "EAST LANSING",
             "EAST MEADOW": "EAST MEADOW",
-
             # East New Market / East Northport / East Orange / East Rochester / East Rutherford
             "EAST NEW MARKET": "EAST NEW MARKET",
             "EAST NORTHPORT": "EAST NORTHPORT",
             "EAST ORANGE": "EAST ORANGE",
             "EAST ROCHESTER": "EAST ROCHESTER",
             "EAST RUTHERFORD": "EAST RUTHERFORD",
-
             # East Saint Louis variants
             "EAST SAINT LOUIS": "EAST ST. LOUIS",
             "EAST ST LOUIS": "EAST ST. LOUIS",
-
             # Edina / Edinburg / Edison / El Cerrito / El Dorado / El Paso
             "EDINA": "EDINA",
             "EDINBURG": "EDINBURG",
@@ -1444,7 +1335,6 @@ class DriverCity:
             "EL DORADO HILLS": "EL DORADO HILLS",
             "EL DORADO HLS": "EL DORADO HILLS",
             "EL PASO": "EL PASO",
-
             # Ellicott City / Ellicott variants
             "EDLLICOTT CITY": "ELLICOTT CITY",
             "ELICOT CITY": "ELLICOTT CITY",
@@ -1458,7 +1348,6 @@ class DriverCity:
             "ELLIIOCOTT CITY": "ELLICOTT CITY",
             "ELLIOCTT CITY": "ELLICOTT CITY",
             "ELLIXOTT CITY": "ELLICOTT CITY",
-
             # Elk / Elkridge / Elkins / Elwood
             "ELK": "ELK",
             "ELK GROVE": "ELK GROVE",
@@ -1473,7 +1362,6 @@ class DriverCity:
             "ELKWOOD": "ELKWOOD",
             "ELWOOD": "ELWOOD",
             "ELWOOD PARK": "ELWOOD PARK",
-
             # Elmhurst / Elmira / Elmore / Elmsford
             "ELMHURST": "ELMHURST",
             "ELMHURST TWP": "ELMHURST",
@@ -1481,7 +1369,6 @@ class DriverCity:
             "ELMORE": "ELMORE",
             "ELMSFORD": "ELMSFORD",
             "ELMWOOD PARK": "ELMWOOD PARK",
-
             # Elyria / Emeryville / Emmaus / Emmitsburg / Emporia
             "ELYRIA": "ELYRIA",
             "EMERALD ISLE": "EMERALD ISLE",
@@ -1490,7 +1377,6 @@ class DriverCity:
             "EMMETT": "EMMETT",
             "EMMITSBURG": "EMMITSBURG",
             "EMPORIA": "EMPORIA",
-
             # Encinitas / Encino / Endicott / Enfield / Englewood
             "ENCINITAS": "ENCINITAS",
             "ENCINO": "ENCINO",
@@ -1499,13 +1385,11 @@ class DriverCity:
             "ENGLEWOOD": "ENGLEWOOD",
             "ENGLEWOOD CLFS": "ENGLEWOOD CLIFFS",
             "ENGLISHTOWN": "ENGLISHTOWN",
-
             # Enid / Enola / Enon / Enterprise
             "ENID": "ENID",
             "ENOLA": "ENOLA",
             "ENON": "ENON",
             "ENTERPRISE": "ENTERPRISE",
-
             # Erie / Erwin / Escondido / Essex / Estero / Eutaw
             "ERIE": "ERIE",
             "ERWIN": "ERWIN",
@@ -1517,7 +1401,6 @@ class DriverCity:
             "ESTERO": "ESTERO",
             "EUTAW": "EUTAW",
             "EUTAWVILLE": "EUTAWVILLE",
-
             # Evans / Evanston / Evansville / Everett
             "EVANS": "EVANS",
             "EVANS CITY": "EVANS CITY",
@@ -1525,7 +1408,6 @@ class DriverCity:
             "EVANSTON": "EVANSTON",
             "EVANSVILLE": "EVANSVILLE",
             "EVERETT": "EVERETT",
-
             # Evergreen / Ewa Beach / Ewing / Exeter / Exton
             "EVERGREEN": "EVERGREEN",
             "EVERGREEN PARK": "EVERGREEN PARK",
@@ -1534,7 +1416,6 @@ class DriverCity:
             "EXETER": "EXETER",
             "EXPORT": "EXPORT",
             "EXTON": "EXTON",
-
             # Fairfax / Fair variants
             "FAIRFAX": "FAIRFAX",
             "FAIRFAX RD": "FAIRFAX",
@@ -1563,7 +1444,6 @@ class DriverCity:
             "FAIRPLAY MD 21733": "FAIRPLAY",
             "FAIRPORT": "FAIRPORT",
             "FAIRRFAX": "FAIRFAX",
-
             # Falls Church / Fall variants
             "FALL CHURCH": "FALLS CHURCH",
             "FALLCHURCH": "FALLS CHURCH",
@@ -1580,7 +1460,6 @@ class DriverCity:
             "FALLS CITY": "FALLS CITY",
             "FALLS CREEK": "FALLS CREEK",
             "FALLS MILLS": "FALLS MILLS",
-
             # Farm / Farming / Fayette variants
             "FARGO": "FARGO",
             "FARMERS BRANCH": "FARMERS BRANCH",
@@ -1594,7 +1473,6 @@ class DriverCity:
             "FAYETTEVILLE": "FAYETTEVILLE",
             "FAYETTEVLLE": "FAYETTEVILLE",
             "FAYETTVILLE": "FAYETTEVILLE",
-
             # Frederick variants
             "FEDERICK": "FREDERICK",
             "FERDERICK": "FREDERICK",
@@ -1615,7 +1493,6 @@ class DriverCity:
             "FREDERICKSBURG": "FREDERICKSBURG",
             "FREDRICK": "FREDERICK",
             "FREDRICKSBURG": "FREDERICKSBURG",
-
             # Fort / Ft variants
             "FORT ASHBY": "FORT ASHBY",
             "FORT BELVOIR": "FORT BELVOIR",
@@ -1661,24 +1538,20 @@ class DriverCity:
             "FT. LAUDERDALE": "FORT LAUDERDALE",
             "FT. MEADE": "FORT MEADE",
             "FT. WASHINGTON": "FORT WASHINGTON",
-
             # Fraser / Frederick / Fremont / Friends
             "FRASER": "FRASER",
             "FREMONT": "FREMONT",
             "FRIENDSHIP": "FRIENDSHIP",
             "FRIENDSVILLE": "FRIENDSVILLE",
             "FRIENDSWOOD": "FRIENDSWOOD",
-
             # Fruitland / Fruit Heights / Fruitland Park
             "FRUIT HEIGHTS": "FRUIT HEIGHTS",
             "FRUITA": "FRUITA",
             "FRUITLAND": "FRUITLAND",
             "FRUITLAND PARK": "FRUITLAND PARK",
-
             # FPO / Functional Post Office
             "FPO": "FPO",
             "FPO AP": "FPO",
-
             # Fulton / Fullerton / Fuquay Varina
             "FULLERTON": "FULLERTON",
             "FULT0M": "FULTON",
@@ -1686,7 +1559,6 @@ class DriverCity:
             "FUNKSTOWN": "FUNKSTOWN",
             "FUQUAY VARINA": "FUQUAY-VARINA",
             "FURLONG": "FURLONG",
-
             # Gaithersburg variants
             "GA5THERSB4RG": "GAITHERSBURG",
             "GAAITHERSBURG": "GAITHERSBURG",
@@ -1702,7 +1574,6 @@ class DriverCity:
             "GAITHERSBURG MD": "GAITHERSBURG",
             "GAITHERSBURG, MD": "GAITHERSBURG",
             # ...all other Gaithersburg variants mapped to GAITHERSBURG
-
             # Germantown variants
             "GAERMANTOWN": "GERMANTOWN",
             "GEERMANTOWN": "GERMANTOWN",
@@ -1712,7 +1583,6 @@ class DriverCity:
             "GERMANTOWN RD": "GERMANTOWN",
             "GERMANTOWNROCKVILLE": "GERMANTOWN",
             # ...all other Germantown variants mapped to GERMANTOWN
-
             # Glen Burnie / Glenarden / Glenmont / Glendale variants
             "GLE BURNIE": "GLEN BURNIE",
             "GLEN BURNE": "GLEN BURNIE",
@@ -1721,7 +1591,6 @@ class DriverCity:
             "GLENMONT": "GLENMONT",
             "GLENNDALE": "GLENDALE",
             # ...additional typo variants mapped to correct city
-
             # Greenbelt / Greensburg / Greenville / Greenwood
             "GREEN BELT": "GREENBELT",
             "GREENBEL": "GREENBELT",
@@ -1733,7 +1602,6 @@ class DriverCity:
             "GREENVILLE": "GREENVILLE",
             "GREENWOOD": "GREENWOOD",
             # ...additional typos mapped
-
             # Gettysburg / Grafton / Grand Rapids / Grandview / Granite / Grant / Grapevine
             "GETTYSBURG": "GETTYSBURG",
             "GRAFTON": "GRAFTON",
@@ -1742,7 +1610,6 @@ class DriverCity:
             "GRANITE CITY": "GRANITE CITY",
             "GRANTSVILLE": "GRANTSVILLE",
             "GRAPEVINE": "GRAPEVINE",
-
             # Gulf / Gwin / Gwynn / Guy / Gibson variants
             "GULF BREEZE": "GULF BREEZE",
             "GULF SHORES": "GULF SHORES",
@@ -1752,7 +1619,6 @@ class DriverCity:
             "GWYNN PARK": "GWYNN PARK",
             "GUYTON": "GUYTON",
             "GUYMON": "GUYMON",
-
             # Miscellaneous typos / minor cities
             "GALAX": "GALAX",
             "GALENA": "GALENA",
@@ -1766,7 +1632,6 @@ class DriverCity:
             "GRANBY": "GRANBY",
             "GRANTHAM": "GRANTHAM",
             "GRAND BLANC": "GRAND BLANC",
-
             # Hagerstown variants
             "HAEGERSTOWN": "HAGERSTOWN",
             "HAFERSTOWN": "HAGERSTOWN",
@@ -1784,7 +1649,6 @@ class DriverCity:
             "HAGGERSTOWN": "HAGERSTOWN",
             "HAGERSTOWN": "HAGERSTOWN",
             "HAGERSTOWN MD": "HAGERSTOWN",
-
             # Halethorpe variants
             "HALETHORPE": "HALETHORPE",
             "HALETHORPE RD": "HALETHORPE",
@@ -1794,12 +1658,10 @@ class DriverCity:
             "HALETHROPE": "HALETHORPE",
             "HALETTHORPE": "HALETHORPE",
             "HALTHORPE": "HALETHORPE",
-
             # Harrisburg variants
             "HARISBURG": "HARRISBURG",
             "HARRIISBURG": "HARRISBURG",
             "HARRISBURG": "HARRISBURG",
-
             # Highland variants
             "HIGHLAND": "HIGHLAND",
             "HIGHLAND BCH": "HIGHLAND BEACH",
@@ -1820,7 +1682,6 @@ class DriverCity:
             "HIGHLANDTOWN": "HIGHLANDTOWN",
             "HIGHLANS RANCH": "HIGHLANDS RANCH",
             "HIGHLND RCH": "HIGHLAND RANCH",
-
             # Huntington variants
             "HUNTINGTON": "HUNTINGTON",
             "HUNTINGTON BE": "HUNTINGTON BEACH",
@@ -1838,7 +1699,6 @@ class DriverCity:
             "HUNTINGDONN VLY": "HUNTINGDON VALLEY",
             "HUNTINGOWN": "HUNTINGTOWN",
             "HUNTINGTH": "HUNTINGTOWN",
-
             # Hyattsville variants
             "HYATTSVILLE": "HYATTSVILLE",
             "HYATTSVILLE MD": "HYATTSVILLE",
@@ -1862,7 +1722,6 @@ class DriverCity:
             "HYATTSVILLE PG": "HYATTSVILLE",
             "HYATTSVILLE MD 20782": "HYATTSVILLE",
             "HYATTSVILLE MD": "HYATTSVILLE",
-
             # Other H cities (common ones)
             "HACKENSACK": "HACKENSACK",
             "HACKETSTOWN": "HACKETTSTOWN",
@@ -1897,7 +1756,6 @@ class DriverCity:
             "HUDSON": "HUDSON",
             "HUNTINGTON": "HUNTINGTON",
             "HUNTINGDON": "HUNTINGDON",
-
             # Ijamsville variants
             "IAMSVILLE": "IJAMSVILLE",
             "IIJAMSVILLE": "IJAMSVILLE",
@@ -1911,23 +1769,19 @@ class DriverCity:
             "IJAMSVILLS": "IJAMSVILLE",
             "IJAMSVULLE": "IJAMSVILLE",
             "IJASVILLE": "IJAMSVILLE",
-
             # Idaho Falls variants
             "IDAHO FALL": "IDAHO FALLS",
             "IDAHO FALLS": "IDAHO FALLS",
-
             # Silver Spring variants
             "ILVER SPRING": "SILVER SPRING",
             "ILVER SPRNG": "SILVER SPRING",
             "JSILVER SPRING": "SILVER SPRING",
             "LVER SPRING": "SILVER SPRING",
-
             # Indian Head / Indianapolis
             "INDIANHEAD": "INDIAN HEAD",
             "INDUAN HEAD": "INDIAN HEAD",
             "INDIANNOPLIS": "INDIANAPOLIS",
             "INDIANPOLIS": "INDIANAPOLIS",
-
             # Lake variants
             "LAKEWOOD": "LAKEWOOD",
             "LAKEWOOD RANCH": "LAKEWOOD RANCH",
@@ -1948,31 +1802,25 @@ class DriverCity:
             "LAKE STEVENS": "LAKE STEVENS",
             "LAKE WALES": "LAKE WALES",
             "LAKE WYLIE": "LAKE WYLIE",
-
             # Lafayette variants
             "LAFAYETTE HL": "LAFAYETTE HILL",
             "LAFAYETTE HILL": "LAFAYETTE HILL",
             "LAFAYETTE": "LAFAYETTE",
-
             # Lancaster variants
             "LANCASTERT": "LANCASTER",
             "LANCASTER": "LANCASTER",
-
             # Lansdowne variants
             "LANDSDOWNE": "LANSDOWNE",
             "LANSDOWNE": "LANSDOWNE",
-
             # Landover variants
             "LANDOVER": "LANDOVER",
             "LANDOVER HILL": "LANDOVER HILL",
             "LANDOVER HILLS": "LANDOVER HILLS",
             "LANDOVER HLS": "LANDOVER HILLS",
             "LANDOVER MD": "LANDOVER",
-
             # Langley Park variants
             "LANGLY PARK": "LANGLEY PARK",
             "LANGLEY PARK": "LANGLEY PARK",
-
             # Laurel variants
             "LAAUREL": "LAUREL",
             "LAUAREL": "LAUREL",
@@ -1995,7 +1843,6 @@ class DriverCity:
             "LAURYS STATION": "LAURYS STATION",
             "LAUTEL": "LAUREL",
             "LAUUREL": "LAUREL",
-
             # Hyphen / misc cleanups for L cities
             "LA CROSSE": "LA CROSSE",
             "LA FERIA": "LA FERIA",
@@ -2015,7 +1862,6 @@ class DriverCity:
             "LA VISTA": "LA VISTA",
             "LAURELGAITHERSBURG": "LAUREL",
             "LAVERNE": "LA VERNE",
-
             # M
             "M-635-108-319-042": "M",
             "MA": "MA",
@@ -2097,7 +1943,6 @@ class DriverCity:
             "MUSKEGON HEIGHTS": "MUSKEGON HEIGHTS",
             "MUSTANG": "MUSTANG",
             "MYRTLE BEACH": "MYRTLE BEACH",
-
             # N
             "N ADAMS": "NORTH ADAMS",
             "N ANDOVER": "NORTH ANDOVER",
@@ -2130,10 +1975,8 @@ class DriverCity:
             "NEW YORK CY": "NEW YORK CITY",
             "NEW YORK `": "NEW YORK CITY",
             "NEW YORL": "NEW YORK CITY",
-
             "O": "O",
             "O FALLON": "O FALLON",
-
             "OAK BLUFFS": "OAK BLUFFS",
             "OAK BROOK": "OAK BROOK",
             "OAK FOREST": "OAK FOREST",
@@ -2158,12 +2001,10 @@ class DriverCity:
             "OAKVALE": "OAKVALE",
             "OAKVILLE": "OAKVILLE",
             "OAKWOOD": "OAKWOOD",
-
             "OBERLIN": "OBERLIN",
             "OBRIEN": "OBRIEN",
             "OCALA": "OCALA",
             "OCCOQUAN": "OCCOQUAN",
-
             "OCEAN": "OCEAN",
             "OCEAN BLUFF": "OCEAN BLUFF",
             "OCEAN CITY": "OCEAN CITY",
@@ -2179,12 +2020,10 @@ class DriverCity:
             "OCEAN VIEW": "OCEAN VIEW",
             "OCEANPORT": "OCEANPORT",
             "OCEANSIDE": "OCEANSIDE",
-
             "OCKLAWAHA": "OCKLAWAHA",
             "OCKVILLE": "OCKVILLE",
             "OCOEE": "OCOEE",
             "OCONOMOWOC": "OCONOMOWOC",
-
             "ODDENTON": "ODENTON",
             "ODENTON": "ODENTON",
             "ODENTON MD": "ODENTON",
@@ -2192,20 +2031,17 @@ class DriverCity:
             "ODENVILLE": "ODENVILLE",
             "ODESSA": "ODESSA",
             "ODUM": "ODUM",
-
             "OELLA": "OELLA",
             "OGDEN": "OGDEN",
             "OGDENSBURG": "OGDENSBURG",
             "OID FORGE": "OLD FORGE",
             "OIL CITY": "OIL CITY",
             "OINGS MILL": "OWINGS MILLS",
-
             "OJAI": "OJAI",
             "OKATIE": "OKATIE",
             "OKEMOS": "OKEMOS",
             "OKLA CITY": "OKLAHOMA CITY",
             "OKLAHOMA CITY": "OKLAHOMA CITY",
-
             "OL NEY": "OLNEY",
             "OLATHE": "OLATHE",
             "OLD BETHPAGE": "OLD BETHPAGE",
@@ -2219,16 +2055,13 @@ class DriverCity:
             "OLDHAMS": "OLDHAM",
             "OLDSMAR": "OLDSMAR",
             "OLDTOWN": "OLD TOWN",
-
             "OLEAN": "OLEAN",
             "OLENY": "OLNEY",
             "OLEY": "OLEY",
             "OLIVE BRANCH": "OLIVE BRANCH",
             "OLIVEBRIDGE": "OLIVEBRIDGE",
-
             "OLMSTEAD": "OLMSTED",
             "OLMSTEAD TWP": "OLMSTED TOWNSHIP",
-
             "OLNE": "OLNEY",
             "OLNER": "OLNEY",
             "OLNET": "OLNEY",
@@ -2237,10 +2070,8 @@ class DriverCity:
             "OLNEY SPGS": "OLNEY SPRINGS",
             "OLNRY": "OLNEY",
             "OLNY": "OLNEY",
-
             "OLUMBIA": "COLUMBIA",
             "OLXON HILL": "OXON HILL",
-
             "OLYMPIA": "OLYMPIA",
             "OMAHA": "OMAHA",
             "OMAK": "OMAK",
@@ -2253,17 +2084,13 @@ class DriverCity:
             "ONEY": "OLNEY",
             "ONLEY": "ONLEY",
             "ONTARIO": "ONTARIO",
-
             "ONTGOMERY VILLAGE": "MONTGOMERY VILLAGE",
-
             "OO": "UNKNOWN",
             "OOO": "UNKNOWN",
             "OOOO": "UNKNOWN",
-
             "OPA LOCKA": "OPA-LOCKA",
             "OPELIKA": "OPELIKA",
             "OPELOUSAS": "OPELOUSAS",
-
             "ORADELL": "ORADELL",
             "ORANDO": "ORLANDO",
             "ORANGE": "ORANGE",
@@ -2272,11 +2099,9 @@ class DriverCity:
             "ORANGEBURG": "ORANGEBURG",
             "ORANGEVALE": "ORANGEVALE",
             "ORANGEVILLE": "ORANGEVILLE",
-
             "ORBISONIA": "ORBISONIA",
             "ORCHARD BEACH": "ORCHARD BEACH",
             "ORCHARD PARK": "ORCHARD PARK",
-
             "OREGON": "OREGON",
             "ORELAND": "ORELAND",
             "OREM": "OREM",
@@ -2284,38 +2109,31 @@ class DriverCity:
             "ORIENT": "ORIENT",
             "ORIENTAL": "ORIENTAL",
             "ORINDA": "ORINDA",
-
             "ORLAND HILLS": "ORLAND HILLS",
             "ORLAND PARK": "ORLAND PARK",
             "ORLANDO": "ORLANDO",
             "ORLANDOO": "ORLANDO",
-
             "ORMOND BCH": "ORMOND BEACH",
             "ORMOND BEACH": "ORMOND BEACH",
-
             "ORO VALLEY": "ORO VALLEY",
             "OROFINO": "OROFINO",
             "ORONO": "ORONO",
             "OROVILLE": "OROVILLE",
-
             "ORRINGTON": "ORRINGTON",
             "ORRSTOWN": "ORRSTOWN",
             "ORRTANNA": "ORTANNA",
             "ORRVILLE": "ORRVILLE",
             "ORWIGSBURG": "ORWIGSBURG",
-
             "OSCODA": "OSCODA",
             "OSHAWA": "OSHAWA",
             "OSHGOSH": "OSHKOSH",
             "OSKALOOSA": "OSKALOOSA",
             "OSPREY": "OSPREY",
             "OSSINING": "OSSINING",
-
             "OSTANDER": "OSTRANDER",
             "OSTERBURG": "OSTERBURG",
             "OSTERVILLE": "OSTERVILLE",
             "OSWEGO": "OSWEGO",
-
             "OTHELLO": "OTHELLO",
             "OTISFIELD": "OTISFIELD",
             "OTOWN": "ORLANDO",
@@ -2323,22 +2141,17 @@ class DriverCity:
             "OTTAWA": "OTTAWA",
             "OTTSVILLE": "OTTSVILLE",
             "OTTUMWA": "OTTUMWA",
-
             "OURCELLVILLE": "OURTOWN",
-
             "OVEIDO": "OVIEDO",
             "OVID": "OVID",
             "OVIEDO": "OVIEDO",
-
             "OVERLAND": "OVERLAND",
             "OVERLAND PARK": "OVERLAND PARK",
-
             "OWATONNA": "OWATONNA",
             "OWENS CROSS ROADS": "OWENS CROSS ROADS",
             "OWENS MILL": "OWINGS MILLS",
             "OWENS MILLS": "OWINGS MILLS",
             "OWENSBORO": "OWENSBORO",
-
             "OWIE": "OWINGS",
             "OWIGS MILL": "OWINGS MILLS",
             "OWING MILL": "OWINGS MILLS",
@@ -2359,9 +2172,7 @@ class DriverCity:
             "OWNINGS MILL": "OWINGS MILLS",
             "OWNINGS MILLS": "OWINGS MILLS",
             "OWUNGS MILLS": "OWINGS MILLS",
-
             "OWLS HEAD": "OWLS HEAD",
-
             "OXEN HILL": "OXON HILL",
             "OXION HILL": "OXON HILL",
             "OXNARD": "OXNARD",
@@ -2371,12 +2182,10 @@ class DriverCity:
             "OXON HILLS": "OXON HILL",
             "OXONHILL": "OXON HILL",
             "OXYN HILL": "OXON HILL",
-
             "OXFORD": "OXFORD",
             "OYSTER BAY": "OYSTER BAY",
             "OZARK": "OZARK",
             "OZONE PARK": "OZONE PARK",
-
             # ---- P;NEY / PALISADES / PALM ----
             "P;NEY": "OLNEY",
             "PAC PALISADES": "PACIFIC PALISADES",
@@ -2391,7 +2200,6 @@ class DriverCity:
             "PAHOA": "PAHOA",
             "PAINESVILLE": "PAINESVILLE",
             "PAINTED POST": "PAINTED POST",
-
             # ---- PAL* ----
             "PALATINE": "PALATINE",
             "PALATKA": "PALATKA",
@@ -2418,13 +2226,11 @@ class DriverCity:
             "PALMETTO BAY": "PALMETTO BAY",
             "PALMYRA": "PALMYRA",
             "PALO ALTO": "PALO ALTO",
-
             # ---- PALOS ----
             "PALOS HEIGHTS": "PALOS HEIGHTS",
             "PALOS HILLS": "PALOS HILLS",
             "PALOS PARK": "PALOS PARK",
             "PALOS VERDES": "PALOS VERDES",
-
             # ---- PAN / PARA / PARK ----
             "PAMPLIN": "PAMPLIN",
             "PANACEA": "PANACEA",
@@ -2441,7 +2247,6 @@ class DriverCity:
             "PARAMOUNT": "PARAMOUNT",
             "PARAMUS": "PARAMUS",
             "PARIS": "PARIS",
-
             # ---- PARK* ----
             "PARK CITY": "PARK CITY",
             "PARK FOREST": "PARK FOREST",
@@ -2463,7 +2268,6 @@ class DriverCity:
             "PARKVALE": "PARKVALE",
             "PARKVILE": "PARKVILLE",
             "PARKVILLE": "PARKVILLE",
-
             # ---- PASADENA ----
             "PAS CHRSTIAN": "PASS CHRISTIAN",
             "PASADEMA": "PASADENA",
@@ -2474,7 +2278,6 @@ class DriverCity:
             "PASEDENA": "PASADENA",
             "PASEDNA": "PASADENA",
             "PASENDENA": "PASADENA",
-
             # ---- PASSAIC / PATERSON ----
             "PASSAIC": "PASSAIC",
             "PATASKA": "PATASKALA",
@@ -2482,7 +2285,6 @@ class DriverCity:
             "PATERSON": "PATERSON",
             "PATOMAC": "POTOMAC",
             "PATTERSON": "PATTERSON",
-
             # ---- PAW / PAWTUCKET ----
             "PAW PAW": "PAW PAW",
             "PAWCATUCK": "PAWCATUCK",
@@ -2491,7 +2293,6 @@ class DriverCity:
             "PAWNEE": "PAWNEE",
             "PAWPAW": "PAW PAW",
             "PAWTUCKET": "PAWTUCKET",
-
             # ---- PHILADELPHIA ----
             "PHIADELPHIA": "PHILADELPHIA",
             "PHIILADELPHIA": "PHILADELPHIA",
@@ -2505,18 +2306,15 @@ class DriverCity:
             "PHILLADELPHIA": "PHILADELPHIA",
             "PHILLEDELPHIA": "PHILADELPHIA",
             "PHILLIDEPHIA": "PHILADELPHIA",
-
             # ---- PHOENIX ----
             "PHOENIX": "PHOENIX",
             "PHOENIXVILLE": "PHOENIXVILLE",
             "PHOENXVILLE": "PHOENIXVILLE",
-
             # ---- PITTSBURGH ----
             "PITSSBURGH": "PITTSBURGH",
             "PITTSBURG": "PITTSBURG",
             "PITTSBURGH": "PITTSBURGH",
             "PITTSBURGS": "PITTSBURGH",
-
             # ---- POOLSVILLE / POTOMAC ----
             "POO;ESVILLE": "POOLSVILLE",
             "POOELSVILLE": "POOLSVILLE",
@@ -2527,10 +2325,8 @@ class DriverCity:
             "POOLEVILLE": "POOLSVILLE",
             "POOLSVILE": "POOLSVILLE",
             "POOLSVILLE": "POOLSVILLE",
-
             "POOMAC": "POTOMAC",
             "POPTOMAC": "POTOMAC",
-
             # ---- POTOMAC (all variants) ----
             "POTAMAC": "POTOMAC",
             "POTAOMC": "POTOMAC",
@@ -2555,77 +2351,57 @@ class DriverCity:
             "POTYOMAC": "POTOMAC",
             "POYOMAC": "POTOMAC",
             "PTOMAC": "POTOMAC",
-
             # ---- PORT / PLYMOUTH ----
             "PORT ST LUCIE": "PORT SAINT LUCIE",
             "PORT ST LUICE": "PORT SAINT LUCIE",
             "PORT ST. LUCIE": "PORT SAINT LUCIE",
             "PT ST LUCIE": "PORT SAINT LUCIE",
-
             "PLYMOUTH": "PLYMOUTH",
             "PLYMOUTH MTG": "PLYMOUTH MEETING",
             "PLYMOUTH MTNG": "PLYMOUTH MEETING",
-
             # ---- PRINCE / PRINCETON ----
             "PRINCESS ANN": "PRINCESS ANNE",
             "PRINCESS ANNE": "PRINCESS ANNE",
             "PRINCE FREDERICK": "PRINCE FREDERICK",
             "PRNC FREDERCK": "PRINCE FREDERICK",
-
             "PRINCETON": "PRINCETON",
             "PRINCETON JCT": "PRINCETON JUNCTION",
             "PRINCETON JCT.": "PRINCETON JUNCTION",
-
             # ---- PURCELLVILLE ----
             "PURCELLVILLE": "PURCELLVILLE",
             "PURCELVILLE": "PURCELLVILLE",
             "PURCEVILE": "PURCELLVILLE",
-
             # ---- FINAL ----
             "PUT IN BAY": "PUT-IN-BAY",
             "PUTNAM VALLEY": "PUTNAM VALLEY",
             "PUTNEY": "PUTNEY",
             "PUYALLUP": "PUYALLUP",
             "PYLESVILLE": "PYLESVILLE",
-
             "QC": "QUEBEC CITY",
             "QUEBEC CITY": "QUEBEC CITY",
-
             "QLNEY": "OLNEY",
-
             "QNS VILLAGE": "QUEENS VILLAGE",
             "QUUEN VLG": "QUEENS VILLAGE",
             "QUEENS VLG": "QUEENS VILLAGE",
             "QUEENS VILLAGE": "QUEENS VILLAGE",
-
             "QQ": "UNKNOWN",
-
             "QUAKERTOWN": "QUAKERTOWN",
             "QUANTICO": "QUANTICO",
             "QUARRYVILLE": "QUARRYVILLE",
-
             "QUECHEE": "QUECHEE",
-
             "QUEEN ANNE": "QUEEN ANNE",
             "QUEEN CREEK": "QUEEN CREEK",
-
             "QUEENS": "QUEENS",
-
             "QUEENSBURY": "QUEENSBURY",
             "QUEENSTOWN": "QUEENSTOWN",
-
             "QUEZON": "QUEZON CITY",
-
             "QUICKSBURG": "QUICKSBURG",
             "QUINCY": "QUINCY",
             "QUINTON": "QUINTON",
-
             "QWINGS MILLS": "OWINGS MILLS",
-
             # R
             "RACHEL": "RACHEL",
             "RACINE": "RACINE",
-
             # Rockville (many variants)
             "RACKVILLE": "ROCKVILLE",
             "RCKVILLE": "ROCKVILLE",
@@ -2674,13 +2450,11 @@ class DriverCity:
             "ROKVILLE": "ROCKVILLE",
             "ROKVVILLE": "ROCKVILLE",
             "RROCKVILLE": "ROCKVILLE",
-
             # Raleigh
             "RALEGIGH": "RALEIGH",
             "RALEIH": "RALEIGH",
             "RALEIGH": "RALEIGH",
             "RALEIGH NC": "RALEIGH",
-
             # Randallstown
             "RANDALLLSTOWN": "RANDALLSTOWN",
             "RANDALLS TOWN": "RANDALLSTOWN",
@@ -2689,7 +2463,6 @@ class DriverCity:
             "RANDALSSTOWN": "RANDALLSTOWN",
             "RANDALSTOWN": "RANDALLSTOWN",
             "RANDLESTOWN": "RANDALLSTOWN",
-
             # Rancho variants
             "RCH CUCAMONGA": "RANCHO CUCAMONGA",
             "RNCH CUCAMNGA": "RANCHO CUCAMONGA",
@@ -2700,7 +2473,6 @@ class DriverCity:
             "RNCHO DOMINGZ": "RANCHO DOMINGUEZ",
             "RNCH PAL VERD": "RANCHO PALOS VERDES",
             "RNCHO PLS VRD": "RANCHO PALOS VERDES",
-
             # Reisterstown
             "REIISTERSTOWN": "REISTERSTOWN",
             "REISERSTOWN": "REISTERSTOWN",
@@ -2713,7 +2485,6 @@ class DriverCity:
             "RESISTERTOWN": "REISTERSTOWN",
             "RESITERSTOWN": "REISTERSTOWN",
             "RIESTERSTOWN": "REISTERSTOWN",
-
             # Riverdale
             "RIVER DALE": "RIVERDALE",
             "RIVERDALE": "RIVERDALE",
@@ -2723,34 +2494,27 @@ class DriverCity:
             "RIVERDALLE": "RIVERDALE",
             "RIVERDLE": "RIVERDALE",
             "RVERDALE": "RIVERDALE",
-
             # Riviera Beach
             "RIVERA BEACH": "RIVIERA BEACH",
             "RIVIERA BCH": "RIVIERA BEACH",
             "RIVIERA BEACH": "RIVIERA BEACH",
-
             # Reading
             "READING": "READING",
             "READINGTON": "READINGTON",
-
             # Redondo Beach
             "REDONDO BEACH": "REDONDO BEACH",
             "RODONDO BEACH": "REDONDO BEACH",
-
             # Roslyn
             "ROSLYN": "ROSLYN",
             "ROSLYN HARBOR": "ROSLYN",
             "ROSLYN HEIGHTS": "ROSLYN",
-
             # Royal Palm Beach
             "ROYAL PA LM BEACH": "ROYAL PALM BEACH",
             "ROYAL PALM BCH": "ROYAL PALM BEACH",
             "ROYAL PALM BEACH": "ROYAL PALM BEACH",
-
             # Refused
             "REFUSED": "UNKNOWN",
             "REFUSED TO PROVIDE": "UNKNOWN",
-
             # -------------------------
             # SOUTH / S. abbreviations
             # -------------------------
@@ -2777,7 +2541,6 @@ class DriverCity:
             "S WILLIAMSPORT": "SOUTH WILLIAMSPORT",
             "S WILLIAMSPRT": "SOUTH WILLIAMSPORT",
             "S YARMOUTH": "SOUTH YARMOUTH",
-
             # -------------------------
             # SAINT / ST
             # -------------------------
@@ -2785,49 +2548,37 @@ class DriverCity:
             "SAINT ALBANS": "SAINT ALBANS",
             "ST ALBANS": "SAINT ALBANS",
             "ST ABLANS": "SAINT ALBANS",
-
             "SAINT AUGUSTINE": "SAINT AUGUSTINE",
             "ST AUGUSTINE": "SAINT AUGUSTINE",
-
             "SAINT CHARLES": "SAINT CHARLES",
             "ST CHARLES": "SAINT CHARLES",
-
             "SAINT CLAIR SHORES": "SAINT CLAIR SHORES",
             "ST CLAIR SHORES": "SAINT CLAIR SHORES",
             "ST. CLAIR SHORES": "SAINT CLAIR SHORES",
-
             "SAINT CLOUD": "SAINT CLOUD",
             "ST CLOUD": "SAINT CLOUD",
-
             "SAINT LOUIS": "SAINT LOUIS",
             "ST LOUIS": "SAINT LOUIS",
-
             "SAINT PAUL": "SAINT PAUL",
             "ST PAUL": "SAINT PAUL",
             "ST. PAUL": "SAINT PAUL",
-
             "SAINT PETERSBURG": "SAINT PETERSBURG",
             "ST PETERSBURG": "SAINT PETERSBURG",
             "ST.PETERSBURG": "SAINT PETERSBURG",
             "ST. PETERSBURG": "SAINT PETERSBURG",
-
             # -------------------------
             # SAN (Spanish cities)
             # -------------------------
             "SAN DEIGO": "SAN DIEGO",
             "SAN DIEGO": "SAN DIEGO",
-
             "SAN FRANSCIO": "SAN FRANCISCO",
             "SAN FRANSICO": "SAN FRANCISCO",
             "SAN FRANSISCO": "SAN FRANCISCO",
             "SAN FRANCISCO": "SAN FRANCISCO",
-
             "SAN BERNRDNO": "SAN BERNARDINO",
             "SN BERNRDNO": "SAN BERNARDINO",
-
             "SAN JOSE": "SAN JOSE",
             "SAN JUAN CAPO": "SAN JUAN CAPISTRANO",
-
             # -------------------------
             # SANDY SPRINGS
             # -------------------------
@@ -2838,14 +2589,12 @@ class DriverCity:
             "SANDY SPRINGS": "SANDY SPRINGS",
             "SANDY SPRNIG": "SANDY SPRINGS",
             "SANY SPRING": "SANDY SPRINGS",
-
             # -------------------------
             # SARASOTA
             # -------------------------
             "SARASODA": "SARASOTA",
             "SARASTOA": "SARASOTA",
             "SARASOTA": "SARASOTA",
-
             # -------------------------
             # SAVANNAH
             # -------------------------
@@ -2853,14 +2602,12 @@ class DriverCity:
             "SAVANNA": "SAVANNAH",
             "SAVANNNAH": "SAVANNAH",
             "SAVANNAH": "SAVANNAH",
-
             # -------------------------
             # SCRANTON
             # -------------------------
             "SCRANTRON": "SCRANTON",
             "SCRATON": "SCRANTON",
             "SCRANTON": "SCRANTON",
-
             # -------------------------
             # SEAT PLEASANT
             # -------------------------
@@ -2869,7 +2616,6 @@ class DriverCity:
             "SEAT PLEASTANT": "SEAT PLEASANT",
             "SEAT PLESANT": "SEAT PLEASANT",
             "SEATPLEASANT": "SEAT PLEASANT",
-
             # -------------------------
             # SILVER SPRING (ALL VARIANTS)
             # -------------------------
@@ -2889,7 +2635,6 @@ class DriverCity:
             "SILVER SPRINGS": "SILVER SPRING",
             "SLIVER SPRING": "SILVER SPRING",
             "SSILVER SPRING": "SILVER SPRING",
-
             # -------------------------
             # SPRINGFIELD
             # -------------------------
@@ -2898,13 +2643,11 @@ class DriverCity:
             "SPRINGFIELD": "SPRINGFIELD",
             "SPRNGFIELD": "SPRINGFIELD",
             "SRINGFIELD": "SPRINGFIELD",
-
             # -------------------------
             # STATEN ISLAND
             # -------------------------
             "STAEN ISLAND": "STATEN ISLAND",
             "STATEN ISLAND": "STATEN ISLAND",
-
             # -------------------------
             # UNKNOWN / NON-CITY
             # -------------------------
@@ -2912,26 +2655,21 @@ class DriverCity:
             "S.E": "UNKNOWN",
             "S.S": "UNKNOWN",
             "SS": "UNKNOWN",
-
             # ---------- O ----------
             "O": "UNKNOWN",
             "OO": "UNKNOWN",
             "OOO": "UNKNOWN",
             "OOOO": "UNKNOWN",
-
             "OAKHILL": "OAK HILL",
             "OAKLAN": "OAKLAND",
             "OAKRIDGE": "OAK RIDGE",
             "OAKDALE": "OAKDALE",
-
             "OAKLAND GDNS": "OAKLAND GARDENS",
-
             "OCEAN PNES": "OCEAN PINES",
             "OCEAN SPGS": "OCEAN SPRINGS",
             "OCEAN SIDE": "OCEANSIDE",
             "OCEAN TWP": "OCEAN",
             "OCEANSIDE": "OCEANSIDE",
-
             "OCKVILLE": "UNKNOWN",
             "OID FORGE": "OLD FORGE",
             "OINGS MILL": "OWINGS MILLS",
@@ -2952,7 +2690,6 @@ class DriverCity:
             "OWNINGS MILLS": "OWINGS MILLS",
             "OWUNGS MILLS": "OWINGS MILLS",
             "OWIGS MILL": "OWINGS MILLS",
-
             "OL NEY": "OLNEY",
             "OLNE": "OLNEY",
             "OLNER": "OLNEY",
@@ -2961,10 +2698,8 @@ class DriverCity:
             "OLNY": "OLNEY",
             "OLNEY MD": "OLNEY",
             "OLNEY SPGS": "OLNEY",
-
             "OLDSMAR": "OLDSMAR",
             "OLDTOWN": "OLD TOWN",
-
             "OLXON HILL": "OXON HILL",
             "OXEN HILL": "OXON HILL",
             "OXION HILL": "OXON HILL",
@@ -2973,23 +2708,17 @@ class DriverCity:
             "OXONHILL": "OXON HILL",
             "OXYN HILL": "OXON HILL",
             "OXON HILL MID 20745": "OXON HILL",
-
             "OVEIDO": "OVIEDO",
             "ORLANDOO": "ORLANDO",
             "ORMOND BCH": "ORMOND BEACH",
-
             # ---------- Q ----------
             "QC": "QUEBEC CITY",
             "QLNEY": "OLNEY",
-
             "QNS VILLAGE": "QUEENS VILLAGE",
             "QUEENS VLG": "QUEENS VILLAGE",
             "QUUEN VLG": "QUEENS VILLAGE",
-
             "QQ": "UNKNOWN",
-
             "QWINGS MILLS": "OWINGS MILLS",
-
             # ---------- T ----------
             "TAKHOMA PARK": "TAKOMA PARK",
             "TAKIOMA PARK": "TAKOMA PARK",
@@ -3015,10 +2744,8 @@ class DriverCity:
             "TKOMA PARK": "TAKOMA PARK",
             "TOKOMA PARK": "TAKOMA PARK",
             "TOCOMA PARK": "TAKOMA PARK",
-
             "TANEY TOWN": "TANEYTOWN",
             "TAWNY TOWN": "TANEYTOWN",
-
             "TEMLE HILLS": "TEMPLE HILLS",
             "TEMPLE HILA": "TEMPLE HILLS",
             "TEMPLE HILL": "TEMPLE HILLS",
@@ -3028,20 +2755,15 @@ class DriverCity:
             "TEMPLE KILLS": "TEMPLE HILLS",
             "TEMPLEHILLS": "TEMPLE HILLS",
             "TEMPLE HILLS MD": "TEMPLE HILLS",
-
             "TIMIMONIUM": "TIMONIUM",
             "TIMINOUM": "TIMONIUM",
-
             "TUSCON": "TUCSON",
             "TUSCORA": "TUSCARORA",
-
             "TYSON CORNER": "TYSONS CORNER",
             "TYSONS": "TYSONS CORNER",
-
             "TEST": "UNKNOWN",
             "TEST`": "UNKNOWN",
             "TRLR 98": "UNKNOWN",
-
             # ---------- UNKNOWN / NOISE ----------
             "UKNOWN": "UNKNOWN",
             "UNK": "UNKNOWN",
@@ -3050,21 +2772,17 @@ class DriverCity:
             "UNOCCUPIED": "UNKNOWN",
             "UNIT 204": "UNKNOWN",
             "UU": "UNKNOWN",
-
             # ---------- U ----------
             "U. SADDLE RIVE": "UPPER SADDLE RIVER",
             "UP SADDLE RIVE": "UPPER SADDLE RIVER",
             "UPP.SADDLE RIV": "UPPER SADDLE RIVER",
             "UPR SADDLE RVR": "UPPER SADDLE RIVER",
-
             "UNIONBRIDGE": "UNION BRIDGE",
             "UNIONDALE": "UNION DALE",
             "UNIOUN BRIDGE": "UNION BRIDGE",
-
             "UNIVERSITY HTS": "UNIVERSITY HEIGHTS",
             "UNIVERSITY HY": "UNIVERSITY HEIGHTS",
             "UNVERSITY PARK": "UNIVERSITY PARK",
-
             # ---------- UPPER MARLBORO (major normalization) ----------
             "UPEER MARLBORO": "UPPER MARLBORO",
             "UPER MARLBORO": "UPPER MARLBORO",
@@ -3097,22 +2815,17 @@ class DriverCity:
             "UPPER MARLBORO PG": "UPPER MARLBORO",
             "UPPER MARLBOROUGH": "UPPER MARLBORO",
             "UPPERMARLBORO": "UPPER MARLBORO",
-
             # ---------- V ----------
             "VA BEACH": "VIRGINIA BEACH",
             "VIRGINA BEACH": "VIRGINIA BEACH",
-
             "VEINNA": "VIENNA",
             "VIENA": "VIENNA",
             "VIENN": "VIENNA",
             "VIIENNA": "VIENNA",
             "VIERNNA": "VIENNA",
-
             "VENWTIA": "VENETIA",
             "VENDERBILT": "VANDERBILT",
-
             "VERMILLION": "VERMILION",
-
             # ---------- WASHINGTON (extensive cleanup) ----------
             "WASH": "WASHINGTON",
             "WASH DC": "WASHINGTON DC",
@@ -3147,7 +2860,6 @@ class DriverCity:
             "WASINGTON": "WASHINGTON",
             "WASINGTON DC": "WASHINGTON DC",
             "WSHINGTON": "WASHINGTON",
-
             # ---------- WALDORF ----------
             "WALDOFT": "WALDORF",
             "WALDOLF": "WALDORF",
@@ -3159,7 +2871,6 @@ class DriverCity:
             "WALDORPH": "WALDORF",
             "WALDPRF": "WALDORF",
             "WALKDORF": "WALDORF",
-
             # ---------- WHEATON ----------
             "WHEATION": "WHEATON",
             "WHEATO": "WHEATON",
@@ -3171,7 +2882,6 @@ class DriverCity:
             "WHETON": "WHEATON",
             "WHHEATON": "WHEATON",
             "WHAETON": "WHEATON",
-
             # ---------- WINDSOR MILL ----------
             "WINDOSOR MILLS": "WINDSOR MILL",
             "WINDSOR MIL": "WINDSOR MILL",
@@ -3181,14 +2891,12 @@ class DriverCity:
             "WINDSOR MILLS": "WINDSOR MILL",
             "WINDSOR MILL CT": "WINDSOR MILL",
             "WINDSOR MILL RD": "WINDSOR MILL",
-
             # ---------- WOODBRIDGE ----------
             "WOODBRDGE": "WOODBRIDGE",
             "WOODBRIGE": "WOODBRIDGE",
             "WOOBRIDGE": "WOODBRIDGE",
             "WOODSBRIDGE": "WOODBRIDGE",
             "WOODBRIDGE TURN": "WOODBRIDGE",
-
             # ---------- WESTMINSTER ----------
             "WESTIMINISTER": "WESTMINSTER",
             "WESTMINESTER": "WESTMINSTER",
@@ -3196,13 +2904,11 @@ class DriverCity:
             "WESTMINTER": "WESTMINSTER",
             "WESTMISTER": "WESTMINSTER",
             "WETMINISTER": "WESTMINSTER",
-
             # ---------- WEST PALM BEACH ----------
             "WEST PALM BCH": "WEST PALM BEACH",
             "WEST PLAM BEACH": "WEST PALM BEACH",
             "WEST PALM BEACHE": "WEST PALM BEACH",
             "WAST PALM BEACH": "WEST PALM BEACH",
-
             # ---------- UNKNOWN / NOISE ----------
             "X": "UNKNOWN",
             "XX": "UNKNOWN",
@@ -3213,50 +2919,34 @@ class DriverCity:
             "XXXXXXXXX": "UNKNOWN",
             "XXXXXXXXXXX": "UNKNOWN",
             "XXXXXXXXXXXXXXXXXXXX": "UNKNOWN",
-
             # ---------- X ----------
             "XILVER SPRING": "SILVER SPRING",
             "ZSILVER SPRING": "SILVER SPRING",
-
             "XIANGFAN CITY, CHINA": "XIANGFAN",
-
             # ---------- Y ----------
             "YAKOMA PARK": "TAKOMA PARK",
-
             "YELLOW SPRING": "YELLOW SPRINGS",
-
             "YARMOUTHPORT": "YARMOUTH PORT",
-
             "YOUNGSTON": "YOUNGSTOWN",
-
             "YPSILIANTI": "YPSILANTI",
-
             "YUNKERS": "YONKERS",
-
             "YORKTOWN HEIGHT": "YORKTOWN HEIGHTS",
             "YORKTOWN HGHTS": "YORKTOWN HEIGHTS",
             "YORKTOWN HGTS": "YORKTOWN HEIGHTS",
             "YORKTOWN HTS": "YORKTOWN HEIGHTS",
             "YORKTWON": "YORKTOWN",
-
             # ---------- Z ----------
             "ZELIENOPLE": "ZELIENOPLE",
             "ZEELAND": "ZEELAND",
             "ZEPHYRHILLS": "ZEPHYR HILLS",
-
             # ---------- LEADING SYMBOL CLEANUP ----------
             "]BETHESDA": "BETHESDA",
             "`BALTIMORE": "BALTIMORE",
             "`COLLEGE PARK": "COLLEGE PARK",
-
-            '0XON HILL': 'OXON HILL',
-
-            '10019 VANDERBILT CIR': 'MARYLAND',
-            
-            '. POTOMAC': 'POTOMAC',
-
-            '13211 CLAXTON DR': 'CLAXTON',
-
+            "0XON HILL": "OXON HILL",
+            "10019 VANDERBILT CIR": "MARYLAND",
+            ". POTOMAC": "POTOMAC",
+            "13211 CLAXTON DR": "CLAXTON",
             "-": "UNKOWN",
             ".": "UNKOWN",
             "0": "UNKOWN",
@@ -3287,6 +2977,15 @@ class DriverCity:
             "#NAME?": "UNKOWN",
         }
 
-        df['Driver City'] = df['Driver City'].map(driver_city_map)
+        df["Driver City"] = df["Driver City"].map(driver_city_map)
+
+        df["Driver City"] = (
+            df["Driver City"]
+            .fillna("UNKNOWN")
+            .astype(str)
+            .str.upper()
+            .str.strip()
+            .str.replace(r"\s+", " ", regex=True)
+        )
 
         return df
